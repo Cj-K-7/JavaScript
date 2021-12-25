@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
+
+.MainBoard{
+    width: 100%;
+    height: 100%;
+
+}
+.clock {
+    position: absolute;
+    top : 25px;
+    left: 25px;
+    font-family: 'Bebas Neue', cursive ;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 100px;
+    font-weight: 900;
+}
+.hello {
+    position: absolute;
+    bottom : 25px;
+    left: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px 15px;
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.taskForm {
+    border : 1px solid black;
+}
+
+.todos {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    top : 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    padding : 25px 0px;
+}
+.todos li{
+    align-items: space-between;
+}
+.todos button {
+   border: 0px;
+   padding: 0px;
+   background-color: rgba(255, 255, 255, 0); 
+}

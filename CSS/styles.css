@@ -1,0 +1,12 @@
+@import 'reset.css';
+@import 'MainBoard.css';
+@import 'form.css';
+
+body {   
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}

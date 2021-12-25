@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <title>To Do Home</title>
+</head>
+
+<body>
+    <div class="form_container hidden">
+        <form id="login_form">
+            <div class="formTitle">Wellcome</div>
+            <input type="email" placeholder="E-mail" id="user_email" name="name" required />
+            <input type="text" placeholder="Name" id="user_name" name="Email" required />
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
+    <div class="MainBoard">
+        <div class="clock">00 : 00 : 00</div>
+        <div class="date"></div>
+        <div class="hello"></div>
+        <ul class="todos">
+            <form class='taskForm'>
+                <input type="text" id="toDo" required>
+            </form>
+        </ul>
+    </div>
+    <div class="background"></div>
+</body>
+
+<script src="./JScomponents/login.js"></script>
+<script src="./JScomponents/clock.js"></script>
+<script src="./JScomponents/bgImage.js"></script>
+<script src="./JScomponents/toDo.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+</html>
