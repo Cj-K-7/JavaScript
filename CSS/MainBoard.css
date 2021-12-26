@@ -15,6 +15,7 @@
     top : 25px;
     right : 5%;
     font-family: 'Bebas Neue', cursive ;
+    z-index: 1;
 }
 
 .weather span:first-child{
@@ -26,16 +27,13 @@
     font-weight: 700;
     margin-left: 12px;
 }
-.hello {
+
+.container {
     position: absolute;
-    bottom : 25px;
-    left: 25px;
-    font-family: 'Josefin Sans', sans-serif;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 10px 15px;
-    font-size: 60px;
-    font-weight: 900;
-    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    padding : 25px 0px;
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 .taskForm {
@@ -46,7 +44,7 @@
     right: 5%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 36px;
-    color : white;
+    color : rgba(255, 255, 255, 0.8);
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
 }
 .taskForm input{
@@ -58,20 +56,13 @@
     font-size: 24px;
     padding : 10px 10px;
     caret-color: white;
-    color : white;
+    color : rgba(255, 255, 255, 0.8);
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
 }
 .taskForm input:focus{
     outline: none;
 }
-.container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding : 25px 0px;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 0;
-}
+
 .todos {
     position: absolute;
     width: 25%;
@@ -96,5 +87,6 @@
 .todos button {
    border: 0px;
    padding: 0px;
+   color : white;
    background-color: rgba(241, 241, 241, 0); 
 }

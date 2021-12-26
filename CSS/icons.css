@@ -1,0 +1,39 @@
+.iconBox {
+    position: absolute;
+    bottom : 130px;
+    left: 35px;
+    font-size: 50px;
+    z-index: 1;
+}
+
+a {
+   color : rgba(255, 255, 255, 0.45);
+   padding : 0px 5px;
+   text-decoration-line: none;
+}
+
+a:nth-child(1):hover {
+    color: red;
+}
+a:nth-child(2):hover {
+    color: white;
+}
+a:nth-child(3):hover {
+    color: rgb(0, 231, 0);
+}
+a:nth-child(4):hover {
+    color: rgb(0, 89, 255);
+}
+
+.hello {
+    position: absolute;
+    bottom : 25px;
+    left: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 15px;
+    font-size: 60px;
+    font-weight: 900;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}

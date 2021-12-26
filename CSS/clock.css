@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@300&display=swap');
-.clock {
+
+.clockBox{
     position: absolute;
+    display: flex;
+    flex-direction: row;
     top : 25px;
     left: 25px;
     font-family: 'Bebas Neue', cursive ;
-    margin-bottom: 20px;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0.6) ,  rgba(255, 255, 255, 0.6),  rgba(255, 255, 255, 0.02) , rgba(255, 255, 255, 0));
+    -webkit-background-clip: text;
+    animation: animate 6s linear infinite;
+    background-size: 200%;
+}
+.clockBox .date{
+    padding : 10px;
+    font-size: 60px;
+    margin-left: 10px;
+    color : transparent;
+}
+
+.clockBox .clock {
     font-size: 160px;
     font-weight: 900;
     color: transparent;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0.8) ,  rgba(255, 255, 255, 0.4),  rgba(255, 255, 255, 0.02) , rgba(255, 255, 255, 0));
-    -webkit-background-clip: text;
-    animation: animate 20s linear infinite;
-    background-size: 200%;
 }
 
 @keyframes animate {
