@@ -1,7 +1,7 @@
 @import 'reset.css';
 @import 'MainBoard.css';
 @import 'login_form.css';
-
+@import 'clock.css';
 body {   
     width: 100vw;
     height: 100vh;

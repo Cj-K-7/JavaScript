@@ -6,19 +6,6 @@
     height: 100%;
 }
 
-.clock {
-    position: absolute;
-    top : 25px;
-    left: 25px;
-    font-family: 'Bebas Neue', cursive ;
-    margin-bottom: 20px;
-    font-size: 160px;
-    font-weight: 900;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.45));
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
 .weather{ 
     position: absolute;
     color : white;
