@@ -16,7 +16,7 @@ const okGeo = (position) => {
 }
  
 const rejGeo = () => {
-    alert( " can't find you ")
+    alert( " can't find you " );
 }
 
 
