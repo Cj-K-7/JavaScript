@@ -1,6 +1,6 @@
 @import 'reset.css';
 @import 'MainBoard.css';
-@import 'form.css';
+@import 'login_form.css';
 
 body {   
     width: 100vw;

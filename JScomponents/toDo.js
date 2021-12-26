@@ -18,7 +18,7 @@ const createTask = (Task) => {
   li.appendChild(span);
   li.appendChild(button);
   span.innerText = Task.text;
-  button.innerText = "❌";
+  button.innerText = "Done !";
   toDolist.appendChild(li);
 
   button.addEventListener("click", deleteTask);
