@@ -18,14 +18,8 @@
     z-index: 1;
 }
 
-.weather span:first-child{
+.weather span{
     font-size: 28px;
-
-}
-.weather span:last-child{
-    font-size: 24px;
-    font-weight: 700;
-    margin-left: 12px;
 }
 
 .container {
