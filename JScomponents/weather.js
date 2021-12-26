@@ -10,8 +10,8 @@ const okGeo = (position) => {
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} _  ${data.main.temp}°`;
+      city.innerText =`CITY : ${ data.name }` ;
+      weather.innerText = `${data.weather[0].main}  :  ${data.main.temp}°`;
     });
 }
  
