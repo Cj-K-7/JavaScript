@@ -10,32 +10,40 @@
 </head>
 
 <body>
-    <div class="form_container hidden">
-        <form id="login_form">
-            <div class="formTitle">Wellcome</div>
-            <input type="email" placeholder="E-mail" id="user_email" name="name" required />
-            <input type="text" placeholder="Name" id="user_name" name="Email" required />
-            <input type="submit" value="SUBMIT">
-        </form>
-    </div>
-    <div class="MainBoard">
-        <div class="clock">00 : 00 : 00</div>
-        <div class="date"></div>
-        <div class="hello"></div>
-        <ul class="todos">
-            <form class='taskForm'>
-                <div class="taskTitle">To Do</div>
-                <input type="text" id="toDo" required>
+    <div class="BG">
+        <div class="form_container hidden">
+            <form id="login_form">
+                <div class="formTitle">Wellcome</div>
+                <input type="email" placeholder="E-mail" id="user_email" name="name" required />
+                <input type="text" placeholder="Name" id="user_name" name="Email" required />
+                <input type="submit" value="SUBMIT">
             </form>
-        </ul>
+        </div>
+        <div class="MainBoard">
+            <div class="clock">00 : 00 : 00</div>
+            <div class="date"></div>
+            <div class="weather">
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="hello"></div>
+            <div class="container">
+                <form class='taskForm'>
+                    <div class="taskTitle">To Do</div>
+                    <input type="text" id="toDo" required>
+                </form>
+                <ul class="todos">
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="background"></div>
 </body>
 
+<script src="./JScomponents/bgImage.js"></script>
 <script src="./JScomponents/login.js"></script>
 <script src="./JScomponents/clock.js"></script>
-<script src="./JScomponents/bgImage.js"></script>
 <script src="./JScomponents/toDo.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<script src="./JScomponents/weather.js"></script>
 
 </html>

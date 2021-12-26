@@ -5,6 +5,7 @@ const formContainer = document.querySelector('.form_container')
 const board = document.querySelector('.MainBoard');
 const hello = document.querySelector('.hello');
 
+
 const Name = "Name"
 const Hide = "hidden"
 
@@ -27,10 +28,12 @@ const hi = () =>{
       hi = "Good Afternoon";
     } else if (hour >= 18 && hour < 24) {
       hi = "Good Evening";
-    } else if (hour >= 00 && hour < 12) {
+    } else if (hour >= 0 && hour < 5) {
+      hi = "Brand new dawn"      
+    } else if (hour >= 5 && hour < 12){
       hi = "Good morning";
     }
-    hello.innerText = `${hi} ${localStorage.getItem(Name)}`;
+    hello.innerText = `${hi}. ${localStorage.getItem(Name)}`;
 }
 
 const isLogedin = localStorage.getItem(Name);

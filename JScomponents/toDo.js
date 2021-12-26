@@ -18,7 +18,7 @@ const createTask = (Task) => {
   li.appendChild(span);
   li.appendChild(button);
   span.innerText = Task.text;
-  button.innerText = "👌";
+  button.innerText = "❌";
   toDolist.appendChild(li);
 
   button.addEventListener("click", deleteTask);
@@ -41,6 +41,7 @@ const submitTask = (event) => {
     taskArray.push(newTaskObj);
     createTask(newTaskObj);
     saveTask();
+    toDoInput.value = ""
 }
 
 taskForm.addEventListener('submit', submitTask);
@@ -50,6 +51,5 @@ const savedTask = localStorage.getItem(TasksKey);
 if( savedTask !== null ){
   const parsed =JSON.parse(savedTask);
   taskArray = parsed;
-  console.log(parsed);
   parsed.forEach(createTask);
 }
