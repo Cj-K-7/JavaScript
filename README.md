@@ -1,1 +1,2 @@
-make my own page
+# JavaScriptAlgorithm
+studying , solving basic Algorithm.
