@@ -1,5 +1,7 @@
 //Use Recursion to Create a Range of Numbers
-/* Your function should return an array.
+
+/* 조건 : 
+Your function should return an array.
 
 Your code should not use any loop syntax (for or while or higher order functions such as forEach, map, filter, or reduce).
 
@@ -13,12 +15,13 @@ rangeOfNumbers(4, 4) should return [4]. */
 
 function rangeOfNumbers(startNumber, endNumber) {
   if (endNumber <= startNumber) {
-    return [startNumber];
+    return [startNumber]; //this is initial value
   } else {
-    const array = rangeOfNumbers(startNumber, endNumber - 1);
+    const array = rangeOfNumbers(startNumber, endNumber - 1); //call function itself : get access initial value by recursion;
     array.push(endNumber);
     return array;
   }
 }
-
-console.log(rangeOfNumbers(1, 10));
+const x=1;
+const y=12;
+console.log(`Recursion : range number - ${x} to ${y} will return ${rangeOfNumbers(x,y)}`);
