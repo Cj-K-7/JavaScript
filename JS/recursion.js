@@ -22,6 +22,7 @@ function rangeOfNumbers(startNumber, endNumber) {
     return array;
   }
 }
+
 const x=1;
 const y=12;
-console.log(`Recursion : range number - ${x} to ${y} will return ${rangeOfNumbers(x,y)}`);
+console.log(`Recursion :\n range number : (startNumber: \"${x}\" , endNumber: \"${y}\") will return : \n ${rangeOfNumbers(x,y)}`);

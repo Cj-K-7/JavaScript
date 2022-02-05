@@ -53,6 +53,7 @@ function lookUpProfile(name, prop) {
     return "No such contact";
 }
 
-lookUpProfile("Akira", "likes"); 
+let name = "Akira"; 
+let prop = "likes";
 
-console.log(lookUpProfile("Akira", "likes"));
+console.log(`Look up : \n find prop by name : (name: \"${name}\" , prop: \"${prop}\") will return : \n ${lookUpProfile(name,prop)}`);
