@@ -42,7 +42,7 @@ const contacts = [
 
 function lookUpProfile(name, prop) {
     for (let i = 0; i < contacts.length; i++) {
-        if(contacts[i][firstName] == name){
+        if(contacts[i].firstName == name){
             if(contacts[i].hasOwnProperty(prop)){
                 return contacts[i][prop];
             } else {
