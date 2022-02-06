@@ -1,7 +1,8 @@
 # **JavaScript Algorithms**
 
  혼자서 하는 Free Code Camp challenge 입니다.
- Based on Free Code Camp Challenges
+ Based on Free Code Camp Challenges.
+ 
  [FreeCodeCamp](https://www.freecodecamp.org)
   
 ## Algorithm basic
