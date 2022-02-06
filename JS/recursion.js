@@ -15,9 +15,9 @@ rangeOfNumbers(4, 4) should return [4]. */
 
 function rangeOfNumbers(startNumber, endNumber) {
   if (endNumber <= startNumber) {
-    return [startNumber]; //this is initial value
+    return [startNumber]; //BASE CASE : this is initial value
   } else {
-    const array = rangeOfNumbers(startNumber, endNumber - 1); //call function itself : get access initial value by recursion;
+    const array = rangeOfNumbers(startNumber, endNumber - 1); //RECURSION : call itself
     array.push(endNumber);
     return array;
   }

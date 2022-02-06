@@ -1,5 +1,7 @@
 //Profile Lookup
 /* 조건 : 
+Find "value" by using Key as argument.
+
 lookUpProfile("Kristian", "lastName") should return the string Vos
 
 lookUpProfile("Sherlock", "likes") should return ["Intriguing Cases", "Violin"]
