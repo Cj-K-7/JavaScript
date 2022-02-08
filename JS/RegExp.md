@@ -35,7 +35,8 @@ if maxDigit is empty, mean no-limit. ex.) { 3, } it means repeated more than 3 t
 For example, applying /\d+/ to "123abc" will match "123". However, applying /\d+?/ to the same string only matches "1".
 
 - **" . "**  
-:  end.
+:  Matches any single character except line terminators: \n, \r, \u2028 or \u2029. For example, /.y/ matches "my" and "ay", but not "yes", in "yes make my day".  
+Inside a character class, the dot loses its special meaning and matches a literal dot.
 
 - **" ( ) "**  
 : Parentheses around any part of the regular expression pattern causes that part of the matched substring to be remembered.
