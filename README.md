@@ -5,10 +5,9 @@
  
  [FreeCodeCamp](https://www.freecodecamp.org)
   
-## Algorithm basic
-- [x] [[Recursive Algorithm](./JS/recursion.js)] : ... About "[Recursion](./JS/recursion.md)"
-- [x] [[Look Up : Key & Value](./JS/lookUp(Key&Value).js))]
-## Algorithms
-## [Regular Expression](./JS/RegExp.md)
+## Algorithm
+- [x] [[Recursive Algorithm](./Docs/recursion.js)] : ... About "[Recursion](./Docs/recursion.md)"
+- [x] [[Look Up : Key & Value](./Docs/lookUp(Key&Value).js))]
+## [Regular Expression](./Docs/RegExp.md)
 
-## Data Structure
+## [Data Structure](./Docs/DataStructure.md)
