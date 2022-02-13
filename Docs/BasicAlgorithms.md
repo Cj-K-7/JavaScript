@@ -1,6 +1,23 @@
 # **Basic Algorithms in JAVASCRIPT**
 
 아래에 Free Code Camp 에서 나온 기본 알고리즘 문제들에 대한 풀이입니다.
+단순한 내용은 풀이 해석을 하지 않았습니다.
+
+1. [Reverse string](#reverse-string)
+2. [Factorial](#factorial)
+3. [Find the Longest Word in a Sentence](#find-the-longest-word-in-a-sentence)
+4. [Repeat String without repeat()](#repeat-string-without-repeat)
+5. [Truncate a String](#truncate-a-string)
+6. [Title Case a Sentence](#title-case-a-sentence)
+7. [Slice and Splice](#slice-and-splice)
+8. [Falsy Bouncer](#falsy-bouncer)
+9. [Where do I Belong](#where-do-i-belong)
+10. [Mutations](#mutations)
+11. [Chunky Monkey](#chunky-monkey)  
+
+<br/>
+<hr/>
+<br/>
 
 ## **Reverse string**  
 String 뒤집기 
@@ -60,7 +77,7 @@ function findLongestWordLength(str) {
 
 <br/><hr/><br/>
 
-## **Repeat String without repeat();**
+## **Repeat String without repeat()**
 
 repeat() 함수 없이 num만큼 string 반복하기  
 <br/>
@@ -100,7 +117,7 @@ function truncateString(str, num) {
 <br/><hr/><br/>
 
 ## **Title Case a Sentence**
-모든 첫 번째 글자는 대문자로. 나머지 글자는 소문자로
+모든 단어의 첫 번째 글자는 대문자로. 나머지 글자는 소문자로
 
 원문 :  
  return All fist letter of each word capitalized.!
@@ -117,6 +134,20 @@ function titleCase(str) {
     .join(" ");
 }
 ```
+
+풀이 :  
+ string 을 대문자/소문자로 만들어주는 toUpperCase/toLowerCase 는 MDN 참고.
+
+ 먼저 전체 소문자로 변경한 뒤에 띄어쓰기마다 첫 글자가 오기 때문에 " " 이렇게 띄어쓰기 (" "와 ""는 전혀 다릅니다)를 이용해 각 단어들을 잘라 Array로 변경해줍니다.   
+  **= split(" ")**
+
+ 그 뒤에 map(: Iteration)을 통해 잘라진 단어들(string)로 이뤄진 Array의 매 element를 또 split을 통해 각 글자로 나눠주게 됩니다.  
+  
+ 그리고 해당 글자들로 이루어진 Array의 첫 글자 : [0] index 값만 대문자로 변경합니다.  
+  **=map((w) => w.replace(w.split("")[0], w.split("")[0].toUpperCase()))**  
+
+ 그리고 최종적으로 join으로 뜨어쓰기 " " 를 넣어주면서 다시 string 형태로 변형해줍니다
+  **=join(" ")**
 
 
 <br/><hr/><br/>
@@ -142,6 +173,8 @@ function frankenSplice(arr1, arr2, n) {
 }
 ```
 
+풀이 : 설명할 내용은 없습니다. ...syntax 를 이용해 기존 배열들 건드리지 않았다는 정도만 언급하면 될 것 같습니다.
+
 
 <br/><hr/><br/>
 
@@ -149,7 +182,8 @@ function frankenSplice(arr1, arr2, n) {
 
 Falsy Value 제거하기  
 
-***Falsy Values** ? :
+***Falsy Values** ? : 구글링 필수.  
+
 Falsy values in JavaScript  
 - false
 - null
@@ -218,9 +252,12 @@ function mutation(arr) {
     .every(letter=> new RegExp(`${letter}`, 'i').test(arr[0]));
 }
 ```
+
+풀이 :  
+
 제가 풀이할 때 
 
-정규표현식으로 인자를 사용하기 위해 new RegExp 에서 `${}` 사용했습니다,
+정규표현식으로 인자를 사용하기 위해 new RegExp 에서 `${}` - [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)( ` )사용했습니다,
 
 FreeCodeCamp 에서 정규표현식을 쓰지 않은 경우가 아래이고,
 
@@ -246,6 +283,7 @@ function mutation(arr) {
 였습니다.
 
 <br/><hr/><br/>
+
 ## **Chunky Monkey**
 
 배열(첫 번째 인자)을 size(두 번째 인자)의 크기의 2차원 배열로 나누기.
