@@ -1,6 +1,11 @@
-//Profile Lookup
-/* 조건 : 
-Find "value" by using Key as argument.
+# Make Function Using Algorithms 
+
+## 1. Look Up Value by Key 
+
+주소록에 있는 요소 Key를 이용해 해당 Key 의 Value를 찾는 함수 만들기
+
+원문 :  
+Find "Value" by using "Key" as argument.
 
 lookUpProfile("Kristian", "lastName") should return the string Vos
 
@@ -12,9 +17,10 @@ lookUpProfile("Bob", "number") should return the string No such contact
 
 lookUpProfile("Bob", "potato") should return the string No such contact
 
-lookUpProfile("Akira", "address") should return the string No such property */
+lookUpProfile("Akira", "address") should return the string No such property  
+<br/>
 
-// Setup
+```javascript
 const contacts = [
   {
     firstName: "Akira",
@@ -54,6 +60,14 @@ function lookUpProfile(name, prop) {
     }
     return "No such contact";
 }
+```
 
+Case Result
+```javascript
 let name = "Akira"; 
 let prop = "likes";
+
+lookUpProfile(name, prop);
+
+["Pizza", "Coding", "Brownie Points"]
+```
