@@ -4,10 +4,17 @@
  Based on Free Code Camp Challenges.
  
  [FreeCodeCamp](https://www.freecodecamp.org)
-  
+
+ <hr/> 
+
 ## Algorithm
-- [x] [[Recursive Algorithm](./Docs/recursion.js)] : ... About "[Recursion](./Docs/recursion.md)"
-- [x] [[Look Up : Key & Value](./Docs/lookUp(Key&Value).js))]
+- [x] [**[Basic Algorithms](./Docs/BasicAlgorithms.md)**]
+- [x] [**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
+
+ <hr/> 
+ 
 ## [Regular Expression](./Docs/RegExp.md)
+
+ <hr/> 
 
 ## [Data Structure](./Docs/DataStructure.md)
