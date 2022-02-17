@@ -19,6 +19,7 @@
  ## Queue 
 
 큐는 편의점 알바를 해봤으면 금방 이해할 수 있다. **선입 선출(FIFO(First In First Out)메커니즘)** 이다.
+음식점같은 곳 대기열이라고 생각해도 쉽다.
 
 ## Linked list
 
