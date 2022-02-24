@@ -1,4 +1,4 @@
-# **JavaScript Algorithms**
+# **JavaScript Basic**
 
  혼자서 하는 Free Code Camp challenge 입니다.
  Based on Free Code Camp Challenges.
@@ -7,18 +7,10 @@
 
  <hr/> 
 
-## Algorithm
-- [**[Basic Algorithms](./Docs/BasicAlgorithms.md)**]
-- [**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
 
- <hr/> 
- 
-## [Regular Expression](./Docs/RegExp.md)
-
- <hr/> 
-
-## [Object Oriented Programming](./Docs/OOB.md)
-
- <hr/> 
-
-## [Data Structure](./Docs/DataStructure.md)
+## [**[Basic Algorithms](./Docs/BasicAlgorithms.md)**]
+ - #[**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
+## [**[Regular Expression](./Docs/RegExp.md)**]
+## [**[Object Oriented Programming](./Docs/OOB.md)**]
+## [**[Data Structure](./Docs/DataStructure.md)**]
+## [**[Functional Programming](./Docs/JS_Functional_Programming.md)**]

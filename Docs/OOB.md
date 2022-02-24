@@ -5,13 +5,27 @@
 
   <br><br>
 
+# Prototype
+
+ Javascript 는 prototype-based 언어로, 모든 JS내 Object는 숨겨진 내부 속성(property)가지는데 ,  이것을  : **[Prototype]** (properties & methods) 이라 한다.
+
+
+ <br><br>
+
 # 객체 Object   
  OOP 패러다임에서 객체는 변수 , 함수, 데이터 구조를 포함하는 하나의 저장소이다.  
 
 <br>    
 
-## JavaScript 에서의 Object
+
+# JavaScript 에서의 Object
 <br>
+
+Object는 변수 : variable 선언과 같다. {} 로 표현하며, property : value 방식으로 한 쌍식 표현한다. property 이름을 key라고 표현하기도 한다.  property는 데이터, 데이터구조(배열), 함수 가 될 수 있다.
+
+
+예시)  
+ "me" 라는 객체가 있고 객체는 'name'과 ' 'numLegs' 2개의 property와 그에 맞는 value를 한 쌍으로 가지고 있다.  
 
 ```javascript
 let me = {
@@ -19,7 +33,7 @@ let me = {
   numLegs: 2
 };
 ```
- "me" 라는 객체가 있고 객체는 'name'과 ' 'numLegs' 2개의 property와 그에 맞는 value를 한 쌍으로 가지고 있다.  
+
  <br>
 
 ## 1. [Access Value of Object's property]
@@ -66,11 +80,27 @@ let duck = {
 ```
  <br>
 
-## 3. [Constructor Function]
+## 3. [Class & Constructor Function]
+
+Class 는 객체를 생성하기 위한 템플릿이다. 구체적으로 표현하자면 object의 data/ method를 추상화 하는 역할을 하는 함수이다.  
+
+
+```javascript
+ class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+```
+
+<br>
 
 Constructor 는 새로운 객체를 생성해주는 function 이다.
 이 Constructor 로 생성될 객체의 properties 와 behaviors(Methods)를 정의한다.
-새로운 객체 생성을 위한 Blueprint 라고 생각하면 쉽다.
+새로운 객체 생성을 위한 객체 틀 , Blueprint 라고 생각하면 쉽다.
+
+위 표현은 Class 내에서 constructor 표현 아래는 직접 function 표현이다.
 
 ```javascript
 function Bird() {
@@ -114,23 +144,43 @@ console.log(swan.name);
 
  <br>
 
+## 6. [Object Prototype Inhetits]
 
-## [Immediately Invoked Function Expression (IIFE)]
+  JS 에서 Object는 몇가지 경우를 제외하고 모든 prototype을 상속한다.
 
-A common pattern in JavaScript is to execute a function as soon as it is declared:
+  예로, hasOwnProperty()는 Object.prototype에 정의되어 있는 메소드로, JS내에서 선언한 object의 대부분에 사용이 가능하다.
 
-(function () {
+  prototype 도  object인 것으로 자체적인 prototype 을 가지고 있다. 그리고 특성 또한 상속이 되는데,  이것을 prototype chain 이라 하는데, 
+
+```javascript
+let duck = new Bird("Donald");
+duck.hasOwnProperty("name");
+```
+
+여기서 duck 은  Bird 의 인스턴스로, Bird는 duck이라는 object의 supertype이 되며, Bird는 JS에서 순수 "Object"가 가지는 prototype을 상속받는다. 
+
+```javascript 
+Object.prototype.isPrototypeOf(Bird.prototype);
+```
+
+
+위는 True를 반환한다.
+
+이제 특정 data를 object로 관리하고 분류할 때, method를 생성해서 prototype으로 사용하거나, object의 하위 object 를 생성하고 분류할때 , 상속특성을 이해하고 supertype(parent object)을 선언하여 prototype을 상속시키느 방식으로 효육적이게 관리 할 수 있게 된다.
+
+## 7. [Immediately Invoked Function Expression (IIFE)]
+
+ Javascript 에서 IIFE 는 함수(function)을 선언하면서 바로 실행(execute)시키는 패턴이다.
+
+```javascript
+ (function () {
   console.log("Chirp, chirp!");
 })();
-This is an anonymous function expression that executes right away, and outputs Chirp, chirp! immediately.
-
-Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an immediately invoked function expression or IIFE.
-
-Rewrite the function makeNest and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
-
-//
-
- 클래스( Class : 객체를 선언하기 위해 변수와 메소드를 구조를 정의하는 틀)
-
-  객체는 클래스의 인스턴스(instance : 틀에 맞게 생긴 객체) 이다.
+```
  
+위 표현식은 이름이 없는 함수(function())가 바로 "Chirp, chirp!" 가 출력되게끔 바로 실행한다. 선언(declare)만으로 함수를 실행시켜버리는 것이다.
+
+이름없이 변수에 저장되지 않고, () 로 감싸서 즉시 실행시키는 것(invoked).
+
+ 
+ <br>
