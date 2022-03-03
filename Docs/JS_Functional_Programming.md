@@ -47,12 +47,32 @@
 <br>
 <br>
 
-  ## 3. [Mutation / Side Effects]
+## 3. [Mutation / Side Effects]
 <br>
 
    Javascript에서 보통 Mutation(변연/변형) 이나 SideEffect는 JS 명령형 코드들을 사용할때 자주 일어난다. 혹은 for반복문에서 조건이나 논리 구조를 어떻게 구성한지에 따라서도 발생한다.
 
    Mutation은 전역변수나, State에 변화가 생기는 것으로, 반복적인 기능 수행이나, 프로그래밍한 구조에 따라 전역변수를 사용하는 다른 함수들에게 영향을 주기 때문에, 이로 인해, 생각지도 못한 결과들이 따라올 수 있다.
 
+<br>
+<br>
 
+## 4. [Avoid External Dependence in a Function]  
 
+<br>
+  functianal programming을 할 때, 지키는 원칙 중 하나로, 의존성(dependency)이 없이 독립적으로 사용될 수 있도록 해야한다. 
+
+  이는 함수 외부에 있는 변수들, 객체들 혹은 또 다른 함수들에 의해 결과가 바뀌지 않고, 같은 조건의 입력에는 항상 정해진 하나의 출력을 가지는 일관성을 가지게 해준다. 
+
+  방식은 함수 선언에서 매개변수 : parameter 와 인자 : argument 를 활용한다.
+
+  ex)
+  ```javascript
+  let value = 2;
+
+  function incrementer(number) {
+     return number + 1;
+  }
+
+  incrementer(value);
+  ```
