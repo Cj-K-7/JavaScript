@@ -138,3 +138,34 @@ spinalCase('This Is Spinal Tap');//this-is-spinal-tap
 풀이  : 정규표현식 필수...
 
 <br>
+
+## 5. Pig Latin
+
+Pig Latin is a way of altering English Words. The rules are as follows:
+
+- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add ay to it.
+
+- If a word begins with a vowel, just add way at the end.
+
+     test case  
+    
+    1. translatePigLatin("paragraphs") should return the string aragraphspay.
+
+    2. translatePigLatin("glove") should return the string oveglay.
+
+    3. translatePigLatin("algorithm") should return the string algorithmway.
+
+<br>
+
+```javascript
+function translatePigLatin(str) {
+  if (str.match(/^[aeiou]/)) return str + "way";
+
+  const consonant = str.match(/^[^aeiou]+/)[0];
+  return str.substring(consonant.length) + consonantCluster + "ay";
+} //consonant => onsonantcay
+```
+
+풀이  : 단어의 앞에오는 자음을 뒤로 붙이는 작업에서 Substring 을 활용하면 편하지만 이것도 정규표현식 필수입니다.
+
+<br>
