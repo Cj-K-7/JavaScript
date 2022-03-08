@@ -139,7 +139,7 @@ spinalCase('This Is Spinal Tap');//this-is-spinal-tap
 
 <br>
 
-## 5. Pig Latin
+## 6. Pig Latin
 
 Pig Latin is a way of altering English Words. The rules are as follows:
 
@@ -168,4 +168,40 @@ function translatePigLatin(str) {
 
 풀이  : 단어의 앞에오는 자음을 뒤로 붙이는 작업에서 Substring 을 활용하면 편하지만 이것도 정규표현식 필수입니다.
 
+<br>
+
+## 7. Search and Replace
+
+Pig Latin is a way of altering English Words. The rules are as follows:
+
+- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add ay to it.
+
+- If a word begins with a vowel, just add way at the end.
+
+     test case  
+    
+    1. myReplace("Let us go to the store", "store", "mall") should return the string Let us go to the mall.
+
+    2. myReplace("I think we should look up there", "up", "Down") should return the string I think we should look down there.
+
+    3. myReplace("He is Sleeping on the couch", "Sleeping", "sitting") should return the string He is Sitting on the couch.
+
+<br>
+
+```javascript
+function myReplace(str, before, after) {
+  let a;
+  const af = after.split("");
+  if(/^[A-Z]/.test(before)){
+    af.splice(0, 1, af[0].toUpperCase());
+    a = af.join("");
+  } else {
+    a = after.replace(after, after.toLowerCase())
+  }
+
+  return str.replace(before, a);
+} //consonant => onsonantcay
+```
+
+풀이  : 단순하게는 string 을 replace 하면 되지만, before 단어의 시작이 대문자이면 after도 대문자이게 해야합니다. 정규표현식으로 before 의 첫글자에 따라 조건문을 걸고, after 인자의 첫번째 글자만 대문자로 바꿔주는 작업을 진행합니다. 정규표현식 활용한 알고리즘이 많네요.
 <br>
