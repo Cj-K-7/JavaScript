@@ -247,3 +247,39 @@ pairElement("GCG"); //[["G", "C"], ["C","G"], ["G", "C"]]
 ```
 
 풀이 : str 을 split() 을 이용해서 배열로 변한한 뒤에, map을 이용해 각 element의 짝을 찾아 2depth 배열로 반환해줍니다.
+
+<br>
+
+## 7. Missing letters
+
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+     test case  
+    
+    1. fearNotLetter("abce") should return the string d.
+
+    2. fearNotLetter("abcdefghjklmno") should return the string i.
+
+    3. fearNotLetter("abcdefghijklmnopqrstuvwxyz") should return undefined.
+
+<br>
+
+```javascript
+function myReplace(str, before, after) {
+  let a;
+  const af = after.split("");
+  if(/^[A-Z]/.test(before)){
+    af.splice(0, 1, af[0].toUpperCase());
+    a = af.join("");
+  } else {
+    a = after.replace(after, after.toLowerCase())
+  }
+
+  return str.replace(before, a);
+} //consonant => onsonantcay
+```
+
+풀이  : 단순하게는 string 을 replace 하면 되지만, before 단어의 시작이 대문자이면 after도 대문자이게 해야합니다. 정규표현식으로 before 의 첫글자에 따라 조건문을 걸고, after 인자의 첫번째 글자만 대문자로 바꿔주는 작업을 진행합니다. 정규표현식 활용한 알고리즘이 많네요.
+<br>
