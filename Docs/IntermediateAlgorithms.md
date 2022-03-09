@@ -205,3 +205,45 @@ function myReplace(str, before, after) {
 
 풀이  : 단순하게는 string 을 replace 하면 되지만, before 단어의 시작이 대문자이면 after도 대문자이게 해야합니다. 정규표현식으로 before 의 첫글자에 따라 조건문을 걸고, after 인자의 첫번째 글자만 대문자로 바꿔주는 작업을 진행합니다. 정규표현식 활용한 알고리즘이 많네요.
 <br>
+
+## 8. DNA Pairing
+
+The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+
+Return the provided character as the first element in each array.
+
+      test case
+
+    1. pairElement("ATCGA") should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
+
+    2. pairElement("TTGAG") should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]].
+
+    3. pairElement("CTCTA") should return [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]].
+
+<br>
+
+```javascript
+function pairElement(str) {
+    return  str.split("").map(a=>{ 
+    let pair;
+    switch(a){
+     case "A" : pair = "T"
+     break;
+     case "T" : pair = "A"
+     break;
+     case "C" : pair = "G"
+     break;
+     case "G" : pair = "C"
+     break;
+    }
+    return [ a , pair ]
+
+  })
+}
+
+pairElement("GCG"); //[["G", "C"], ["C","G"], ["G", "C"]]
+```
+
+풀이 : str 을 split() 을 이용해서 배열로 변한한 뒤에, map을 이용해 각 element의 짝을 찾아 2depth 배열로 반환해줍니다.
