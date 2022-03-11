@@ -8,7 +8,9 @@
  <hr/> 
 
 
-## [**[Basic Algorithms](./Docs/BasicAlgorithms.md)**]
+## [**[Algorithms]**]
+ - #[**[Basic](./Docs/BasicAlgorithms.md)**]
+ - #[**[Intermediate](./Doc/IntermediateAlgorithms.md)**]
  - #[**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
 ## [**[Regular Expression](./Docs/RegExp.md)**]
 ## [**[Object Oriented Programming](./Docs/OOB.md)**]
