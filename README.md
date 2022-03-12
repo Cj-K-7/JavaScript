@@ -12,17 +12,28 @@
  - #[**[Basic](./Docs/BasicAlgorithms.md)**]
  - #[**[Intermediate](./Doc/IntermediateAlgorithms.md)**]
  - #[**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
+ - 
  <br>  
  
 ## [**[Regular Expression](./Docs/RegExp.md)**]  
+
  <br>  
+ 
 ## [**[Object Oriented Programming](./Docs/OOB.md)**]  
+
  <br>  
+ 
 ## [**[Data Structure](./Docs/DataStructure.md)**]  
+
  <br>  
-## [**[Functional Programming](./Docs/JS_Functional_Programming.md)**]  
+ 
+## [**[Functional Programming](./Docs/JS_Functional_Programming.md)**] 
+
+
  <br>  
  
 # Frameworks & Librarys should learn or know
+
  <br>  
+   
 # [Next.js](./Nextjs.md)
