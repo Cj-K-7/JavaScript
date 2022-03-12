@@ -32,8 +32,7 @@
 
  <br>  
  
-# Frameworks & Librarys should learn or know
+# Frameworks & Librarys
 
- <br>  
-   
+ <br>   
 ## [Next.js](./Nextjs.md)
