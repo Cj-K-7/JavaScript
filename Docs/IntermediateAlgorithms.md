@@ -267,19 +267,23 @@ If all letters are present in the range, return undefined.
 <br>
 
 ```javascript
-function myReplace(str, before, after) {
-  let a;
-  const af = after.split("");
-  if(/^[A-Z]/.test(before)){
-    af.splice(0, 1, af[0].toUpperCase());
-    a = af.join("");
-  } else {
-    a = after.replace(after, after.toLowerCase())
-  }
+function fearNotLetter(str) {
+  let currCharCode = str.charCodeAt(0);
+  let missing = undefined;
 
-  return str.replace(before, a);
-} //consonant => onsonantcay
+  str
+    .split("")
+    .forEach(letter => {
+      if (letter.charCodeAt(0) === currCharCode) {
+        currCharCode++;
+      } else {
+        missing = String.fromCharCode(currCharCode);
+      }
+    });
+
+  return missing;
+}
 ```
 
-풀이  : 단순하게는 string 을 replace 하면 되지만, before 단어의 시작이 대문자이면 after도 대문자이게 해야합니다. 정규표현식으로 before 의 첫글자에 따라 조건문을 걸고, after 인자의 첫번째 글자만 대문자로 바꿔주는 작업을 진행합니다. 정규표현식 활용한 알고리즘이 많네요.
+풀이  : charCodeAt() 에 대해서 MDN문서 를 보고 몇번 테스트한뒤 적용했습니다만, 아직도 잘 이해가 안되네요. 유니코드에 대해서 찾아보면 도움이 될 것 같습니다.
 <br>
