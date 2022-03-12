@@ -32,24 +32,25 @@ Improve the application's initial load
 
 ## 6. Build Time and Runtime
 
-빌드 단계에서는 앱을 준비./ 런타임에서는 앱이 운영되고, 유저의 요청에 반응하는 단계.
+빌드 단계에서는 앱을 준비./ 런타임에서는 앱이 운영되고, 유저의 요청에 반응하는 단계.  
 Build time (or build step) is the name given to a series of steps that prepare your application code for production.
 
 Runtime (or request time) refers to the period of time when your application runs in response to a user’s request, after your application has been built and deployed.
 
 ## 7. Rendering
 
-Next.js 에서는 서버사이드렌더링/스태틱사이트생성/클라이언트사이드 렌더링 총 3가지 렌더링 메소드가 가능하다.
+Next.js 에서는 서버사이드렌더링/스태틱사이트생성/클라이언트사이드 렌더링 총 3가지 렌더링 메소드가 가능하다.  
 With Next.js, three types of rendering methods are available: Server-Side Rendering and Static Site Generation, and Client-Side Rendering.
 
 ## 8. Client-Side Navigation
 
-Link 컴포넌트는 클라이언드 사이드 네비게이션으로, browser 로 기본적 네이게이션 형태보다 빠른 자바스크립트를 이용한 page transition을 이용.
+Link 컴포넌트는 클라이언드 사이드 네비게이션으로,
+browser의 기본적 네이게이션 형태보다 빠른 자바스크립트를 이용한 page transition을 이용.  
 
-만약 <Link href="..."> 가 아닌 <a href= ""> 로 사용 할 경우에는 browser 가 full refresh 해버린다는 점을 유의.
+만약 ``` <Link href="..."> ```가 아닌 ``` <a href= "">``` 로 사용 할 경우에는 browser 가 full refresh 해버린다는 점을 유의.  
 
 또한 Link 컴포넌트가 있다면 , Next.js 는 미리 링크되어있는 페이지의 코드를 prefetch한다.
-( prefetches the code for the linked page in the background. )
+( : prefetches the code for the linked page in the background. )
 그래서 실제 링크를 클릭할시에 백그라운드에 미리 로드된 페이지를 불러오게되면서 page transtion 이 거의 즉시 일어난다.
 
 정리하자면 Next.js 는 자동적으로 빌드하는 앱의 퍼포먼스를 위해 코드를 split 하고, client-side navigation 을 통해 full refresh 가 되지 않게 해주며, 다른 link로 prefetch가 가능하게 끔 해준다.(production 단계에서)
@@ -60,7 +61,7 @@ Next.js 는 public directory 내부에서(under) statc assets 를 지원합니�
 
 예를 들어 image의 위치가 public/images/image.jpg라면
 태그내 src에서 표현은 root가 public 이므로,
-<img src="/images/image.jpg" alt="image"> 가 된다.
+```<img src="/images/image.jpg" alt="image">``` 가 된다.
 
 여기서 HTML img 태그를 사용할 경우에, 대표적으로 다음과 같은 사항을 수동적으로 다루어야 한다.
 
@@ -80,9 +81,9 @@ Image 컴포넌트는 항상 CLS( 누적 레이아웃 이동 : 예기치 못한 
 ## 10. Metadata
 
 HTML tag에서 title 이나 head 를 수정하기를 원할때 단순히 
-
+```
 <Head> </Head>
-
+```
 로 Nesting 하여 수정할 수 있다. (head 의 extension처럼 사용)
 (You can import the Head component from the next/head module.)
 
@@ -91,7 +92,7 @@ HTML tag에서 title 이나 head 를 수정하기를 원할때 단순히
 third-party script를 추가할때, 기존 script 태그를 사용할 경우, 같은 페이지 내 어떤 시점에서 
 해당 script 의 JS가 fetch되는지 특정하기가 어렵고, 특정 script 가 렌더링이나 page의 컨텐츠 로딩에 딜레이를 발생시킬 수 있어, 성능에 영향을 줄 수있다.
 
-next/script 모듈의 <Script></Script>(script 의 extension ) 으로 다음과 같은 property들을 가진다.
+next/script 모듈의 ```<Script></Script>```(script 의 extension ) 으로 다음과 같은 property들을 가진다.
 
     1. 'strategy' : third-party script 를 언제 로드할지 제어한다.
     2. 'onLoad' : 스크립트가 로딩이 끝나자마자 실행될 JS 코드를 적을 수 있다.
@@ -99,9 +100,9 @@ next/script 모듈의 <Script></Script>(script 의 extension ) 으로 다음과 
 (주석 .결론적으로는 script 로딩 시기를 특정화해서 성능응 향상시키고, 콜백 기능을 추가해주는 extension이라고 생각하면 되는거 같다.)
 
 ## 12. CSS Styling
-
+```
 <style jsx>{``}</style>
-
+```
 Next.js 는 styled-jsx  라이브러리를 사용 = "CSS-in-JS" 
 
 React 컴포넌트 내에서 CSS 코드를 작성할 수 있게 해주는 라이브러리로, 작성한 CSS style들은 scoped 된다. (scoped 표현은 다른 컴포넌트들에게 영향을 주지 않는 것으로, 선언댄 해당 컴포넌트에서만 적용)
