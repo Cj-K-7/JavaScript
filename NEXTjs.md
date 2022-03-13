@@ -119,3 +119,30 @@ Global styles .전역 스타일 설정시에는. css파일을 프로젝트 폴�
 단, import를 pages/_app.js 에서 해줘야한다(Only inside pages/_app.js ). 이 규칙만 지켜주고, Global(전역)으로 적용하고 싶은 CSS를 만든 CSS파일에 써주면된다.
 
 +@ : [Styling tips](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
+
+
+# Pre-rendering
+
+기본적으로 Next.js 는 모든 page를 pre-rendering 한다. (미리 각 페이지를 HTML에 생성해 놓는다. 기존에는 클라이언트 사이드에서 Javascript가 할 작업)
+
+그래서 pre-rendering 은 더 좋은 검색엔진최적화와 퍼포먼스를 가진다. 미리 각 HTML 페이지를 최소한의 JS 코드를 활용해 생성하고, 해당 페이지가 로드될 때, JS 코드들을 실행시켜서 interactive page 를 만들어낸다 (이 과정을 hydration 이라고 부름)
+
+단순하게 이야기하면 pre-rendering 은
+미리 HTML 페이지들을(그에 맞는 코드들만 이용해서) 만들어 놓고, 실제로 그 페이지를 불러오면(Hydration ) 그때 interactive 한 page가 된다.
+
+여기서 두가지 pre-rendering 형태를 가지는데
+
+Static Generation / Server-side Rendering 가 있다.
+차이점은 HTML 페이지를 생성하는 시점에 있다.
+ 
+    1. Static generation 은 Buld time 에서 HTML 을 생성하는 method 로, 미리 생성된 HTML은 매 request 마다 다시 사용된다.
+
+    2. Serve-side Rendering 은 매 request 마다 HTML 을 생성하는 method이다.  
+
+
+이름 그대로 쉽게 생각해서 미리 정적인 HTML 페이지를 만들어놓고 보여주는 것과, 매 번 서버에 요청하면 만들어주는 것
+
+NEXT.js 에서는 Statc generation 방식을 권장한다.(데이터를 사용하던 안 사용하던)
+매 요청마다 서버에서 렌더링할 페이지를 만들 필요가 없기 때문이다. CDN(컨텐츠 전송 네트워크)를 통해 더 빠르게 전송이 되고 한 번만 생성하기 때문!
+
+그렇다고 항상 좋은 것은 아닌 것이, 자주 업데이트되는 data를 활용하고 보여주는 페이지거나 할때 또는 많은 req/res로 page가 실시간 변화가 생긴다면, Server-side Rendering 을 사용하는 것이 비교적 느릴 수는 있으나 pre-rendering 된 페이지가 최신 상태를 갱신할 수 있다.
