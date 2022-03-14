@@ -146,3 +146,7 @@ NEXT.js 에서는 Statc generation 방식을 권장한다.(데이터를 사용�
 매 요청마다 서버에서 렌더링할 페이지를 만들 필요가 없기 때문이다. CDN(컨텐츠 전송 네트워크)를 통해 더 빠르게 전송이 되고 한 번만 생성하기 때문!
 
 그렇다고 항상 좋은 것은 아닌 것이, 자주 업데이트되는 data를 활용하고 보여주는 페이지거나 할때 또는 많은 req/res로 page가 실시간 변화가 생긴다면, Server-side Rendering 을 사용하는 것이 비교적 느릴 수는 있으나 pre-rendering 된 페이지가 최신 상태를 갱신할 수 있다.
+
+## 최대 장점?
+
+첫 빌드타임 진행시에 불러오는 property 를 선택한다고 생각하면된다. 무조건 page component에서만 쓰일 수 있고 사용하면 Server Side Props 와 같이 사용 할 수 없다. data fetching에서도 선택적으로 사용할때 빛을 발휘한다. 
