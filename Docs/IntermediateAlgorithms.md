@@ -287,3 +287,77 @@ function fearNotLetter(str) {
 
 풀이  : charCodeAt() 에 대해서 MDN문서 를 보고 몇번 테스트한뒤 적용했습니다만, 아직도 잘 이해가 안되네요. 유니코드에 대해서 찾아보면 도움이 될 것 같습니다.
 <br>
+
+
+## 8. Sorted Union
+
+Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+     test case  
+    
+    1. uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
+
+    2. uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
+
+    3. uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
+
+<br>
+
+```javascript
+function uniteUnique(...arrs) {
+  return arrs.reduce((a, c) => {
+    const result = a
+      .reduce((acc, current) => {
+        const length = acc.length;
+        if (length === 0 || !acc.includes(current)) { acc.push(current); }
+        return acc
+      }, [])
+      .concat(c.filter((e) => !a.includes(e)))
+    return result;
+  });
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+```
+
+풀이  : reduce 지옥입니다. 제가 푼 풀이는 성능이 안좋을 것 같아보입니다.
+쉽게 풀이하자면.
+  배열들을 요소로 가지는 배열에서 reduce 를 통해 매 배열(2차배열들)마다 그 이전 배열의 숫자들이 includes되어 있는지 확인 후에 필터링으로 아닌(false) 경우만 모아서 concat을 실행하구요. 한번 실행될때마다 accumulator에 중복값을 없애는 reduce를 또 만듭니다...
+<br>
+
+## 9. Convert HTML Entities
+
+Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entiti
+
+     test case  
+    
+    1. convertHTML("Dolce & Gabbana") should return the string Dolce &amp; Gabbana.
+
+    2. convertHTML("Hamburgers < Pizza < Tacos") should return the string Hamburgers &lt; Pizza &lt; Tacos.
+
+    3. convertHTML("<>") should return the string &lt;&gt;.
+
+<br>
+
+```javascript
+function convertHTML(str) {
+  const htmlEntities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+  return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
+}
+
+// test here
+convertHTML("Dolce & Gabbana");
+```
+
+풀이  : 너무 어렵게 생각해도 잘 안풀리는 문제입니다. parseInt() 같이 편리한 method()가 있으면 좋겠죠. 그걸 만드는거라 생각합니다. 정규표현식이 필요합니다!
+<br>
