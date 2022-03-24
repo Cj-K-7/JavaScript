@@ -535,3 +535,56 @@ sumPrimes(10);
 <br>
 <br>
 <br>
+
+## 12. Smallest Common Multiple
+<br>
+
+Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+
+The range will be an array of two numbers that will not necessarily be in numerical order.
+
+     test case  
+    
+    1. smallestCommons([1, 5]) should return 60.
+
+    2. smallestCommons([1, 13]) should return 360360.
+
+    3. smallestCommons([23, 18]) should return 6056820.
+
+
+<br>
+<br>
+
+```javascript
+function smallestCommons(arr) {
+  let [min, max] = arr.sort((a,b)=>a - b);
+  let numbers = [];
+  for (min; min <= max; min++){
+numbers.push(min)
+  }
+
+let time = 1;
+for(let i=1;  !numbers.every(number=> (max*i)%number ===0 ) ; i++ ){
+  time = i+1;
+}
+
+  return max*time;
+}
+
+smallestCommons([1,5]);
+```
+
+<br>
+
+풀이  : 주어진 최대값과 최소값으로 이루어진 arr 로 , 최소 공배수를 구하는 문제입니다.
+어려운게 분명 아닌데??? 하고 그냥 풀어서 진행해보면 꾀나 수학시간에 손으로 푸는 것보다는 어려웠습니다. 
+
+우선 ES6 로 destructuring 문법을 통해 최대값과 최소값을 sort()된 인자값에서 추출해주시고(함수내 첫번째 선언)
+최대부터 최소값까지를 나열한 arr 하나를 생성해서 every() 메소드를 통해 반복문 조건을 만들었습니다. 그 조건은 
+
+ 최대값의 공배수들 반복시키게끔 하는 것이지요. 그 공배수를 만들어 놓은 array의 every()를 통해 모두가 만족하는 나머지 0, 즉 처음 주어진 최대 최소값 사이 모든 수들의 공배수 중 첫번째로 나머지가 0인 공배수가 나옵니다. 다시 말하면 최소 공배수이죠.
+
+
+<br>
+<br>
+<br>
