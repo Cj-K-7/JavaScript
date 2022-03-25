@@ -10,7 +10,7 @@
 
 ## **[Algorithms]**
  - #[**[Basic](./Docs/BasicAlgorithms.md)**]
- - #[**[Intermediate](./Doc/IntermediateAlgorithms.md)**]
+ - #[Intermediate](./Doc/IntermediateAlgorithms.md)
  - #[**[Recursive Algorithm](./Docs/recursion.js)**] : ... About "[Recursion](./Docs/recursion.md)"  
  - 
  <br>  
