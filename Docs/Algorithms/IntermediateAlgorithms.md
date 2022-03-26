@@ -780,3 +780,80 @@ parseInt가 가지는 parameter 들을 이해하고 있으면 쉽습니다.
 <br>
 <br>
 <br>
+
+# 14. Everything Be True
+<br>
+
+Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
+
+In other words, you are given an array collection of objects. The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
+
+
+
+     test case  
+    
+    1. truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot") should return false.
+
+    2. truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role") should return false.
+
+<br>
+<br>
+
+```javascript
+function truthCheck(collection, pre) {
+  return  collection.every(collect =>  collect[pre])
+}
+
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
+```
+
+<br>
+
+풀이  : 첫번째 인자에 오브잭트로 이루어진 배열을 주고, 두 번째 인자에 키워드값을 주어서
+해당 배열 오브젝트들이 주어진 두 번째 인자 키워드값에 true 가 되는지를 확인하도록 해주면 됩니다.
+
+ every 함수를 쓰면 한방에 해결됩니다. 
+
+<br>
+<br>
+<br>
+
+
+# 15. Arguments Optional
+
+Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
+
+For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+
+Calling this returned function with a single argument will then return the sum:
+
+var sumTwoAnd = addTogether(2);
+sumTwoAnd(3) returns 5.
+
+If either argument isn't a valid number, return undefined.
+
+<br>
+<br>
+
+```javascript 
+function addTogether() {
+  const [first, second] = arguments;
+  if (typeof(first) !== "number")
+    return undefined;
+  if (second === undefined)
+    return (second) => addTogether(first, second);
+  if (typeof(second) !== "number")
+    return undefined;
+  return first + second;
+}
+
+addTogether(2,3);
+```
+
+<br>
+
+풀이  : 함수를 다시 리턴하는 패턴을 만들어 주는 것과, 타입 지정해주는 부분을 신경 써주면 쉽게 풀 수 있는데, 평소에 함수를 리턴하는 것을 안만들어보다보니 더 생소하네요.
+
+<br>
+<br>
+<br>
