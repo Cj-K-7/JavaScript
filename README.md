@@ -9,17 +9,17 @@
 
 
 ## **[Algorithms]**
- - # [Basic](./Docs/BasicAlgorithms.md)
- - # [Intermediate](./Docs/IntermediateAlgorithms.md)
- - # [Recursive Algorithm](./Docs/recursion.js): ... About "[Recursion](./Docs/recursion.md)"  
+ - # [Basic](./Docs/Algorithms//BasicAlgorithms.md)
+ - # [Intermediate](./Docs/Algorithms/IntermediateAlgorithms.md)
+ - # [Recursive Algorithm](./Docs/Algorithms/recursion.js): ... About "[Recursion](./Docs/Algorithms/recursion.md)"  
  - 
  <br>  
  
-## [**[Regular Expression](./Docs/RegExp.md)**]  
+## [**[MDN Cunquering](./Docs/MDNconquer)**]  
 
  <br>  
  
-## [**[Object Oriented Programming](./Docs/OOB.md)**]  
+## [**[Object Oriented Programming](./Docs/OOB.md)**]  S
 
  <br>  
  
