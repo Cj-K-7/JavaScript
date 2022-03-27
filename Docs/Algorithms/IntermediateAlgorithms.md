@@ -857,3 +857,39 @@ addTogether(2,3);
 <br>
 <br>
 <br>
+
+
+# 16. Map the Debris
+
+Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
+
+The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
+
+You can read about orbital periods on Wikipedia.
+
+The values should be rounded to the nearest whole number. The body being orbited is Earth.
+
+The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.
+
+<br>
+<br>
+
+```javascript 
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  const pi = Math.PI
+
+  return   arr.map((obj)=>{return { name : obj.name, orbitalPeriod: Math.round(2*pi*Math.sqrt(((earthRadius+obj.avgAlt)**3)/GM)) }});
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+```
+
+<br>
+
+풀이  : 행성궤도 공전 주기 연산입니다. orbital periods. https://en.wikipedia.org/wiki/Orbital_period
+
+<br>
+<br>
+<br>
