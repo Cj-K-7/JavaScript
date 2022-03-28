@@ -26,11 +26,3 @@ function rangeOfNumbers(startNumber, endNumber) {
 const x=1;
 const y=12;
 console.log(`Recursion :\n range number : (startNumber: \"${x}\" , endNumber: \"${y}\") will return : \n ${rangeOfNumbers(x,y)}`);
-
-const solution= (v)=>{
-  let answer = [];
-  v.reduce((a,c,i)=>{ a[i]=c }, answer);
-  return answer;
-}
-
-solution([1,2,3,4,5]);
