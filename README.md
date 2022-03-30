@@ -19,7 +19,7 @@
 
  <br>  
  
-## [**[Object Oriented Programming](./Docs/OOB.md)**]  S
+## [**[Object Oriented Programming](./Docs/OOB.md)**] 
 
  <br>  
  
