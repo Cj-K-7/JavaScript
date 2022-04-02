@@ -12,14 +12,14 @@
  - # [Basic](./Docs/Algorithms//BasicAlgorithms.md)
  - # [Intermediate](./Docs/Algorithms/IntermediateAlgorithms.md)
  - # [Recursive Algorithm](./Docs/Algorithms/recursion.js): ... About "[Recursion](./Docs/Algorithms/recursion.md)"  
- - 
+
  <br>  
  
 ## [**[MDN Cunquering](./Docs/MDNconquer)**]  
 
  <br>  
  
-## [**[Object Oriented Programming](./Docs/OOB.md)**]  S
+## [**[Object Oriented Programming](./Docs/OOB.md)**] 
 
  <br>  
  
