@@ -15,15 +15,18 @@
 
  <br>  
  
+## [**[Data Structure](./Docs/DataStructure/DataStructure.md)**]  
+ - # [LinkedList.js](./Docs/DataStructure//LinkedList.js)
+ - # [Que](./Docs/DataStructure/Que.js)
+ - # [Stack](./Docs/DataStructure/Stack.js)
+
+ <br>  
+ 
 ## [**[MDN Cunquering](./Docs/MDNconquer)**]  
 
  <br>  
  
 ## [**[Object Oriented Programming](./Docs/OOB.md)**] 
-
- <br>  
- 
-## [**[Data Structure](./Docs/DataStructure.md)**]  
 
  <br>  
  

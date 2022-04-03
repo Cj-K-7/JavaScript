@@ -15,7 +15,7 @@ class Stack {
   //Return and remove top element in stack
   //return undefined if stack is empty
   pop() {
-    if (this.coun == 0) return undefined;
+    if (this.count == 0) return undefined;
     let deleteItem = this.items[this.count - 1];
     this.count--;
     console.log(`${deleteItem} removed`);
