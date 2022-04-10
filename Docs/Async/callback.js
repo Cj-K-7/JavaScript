@@ -36,13 +36,23 @@ function createPost(post) {
 
 // Async / Await
 
-async function init() {
-    await createPost({ title: "Post Four", body: "This is post four" });
+// async function init() {
+//     await createPost({ title: "Post Four", body: "This is post four" });
 
-    getPosts();
+//     getPosts();
+// }
+
+// init();
+
+
+// Async / Await / Fetch
+async function fetchUsers() {
+    const res = await fetch();
+    const data = await res.json();
+    
 }
 
-init();
+
 
 /// Promise.all
 
