@@ -3,3 +3,5 @@ class Text extends HTMLElement {
     super();
   }
 }
+
+const text = new Text();
