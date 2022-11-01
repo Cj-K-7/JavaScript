@@ -48,7 +48,6 @@
     }
   };
   console.log(Rectangle.name);
-  // out
   ```
 
 ## # Class 의 body 와 method 정의
@@ -59,13 +58,43 @@
 
   - 생성자 method는 클래스를 통해 새로 object를 만드는 특별한 method로, 명자체 constructor로 클래스 안에 1개만 존재한 수 있다. ( 생성자가 1개가 아니면 에러를 Throw )
 
-  - 생성자 method 는 생성자의 superclass(parents constructor)를 불러올 수 있는 super 키워들르 사용할 수 있다.
+  ```javascript
+    class Class {
+      //1 번만 선언한다.
+      constructor(){
+        //~~
+      }
+      .
+      .
+      .
+    }
+  ```
+
+  - 생성자 method 는 생성자의 superclass(parents constructor)를 불러올 수 있는 super 키워드를 사용할 수 있다.
+
+  ```javascript
+      .
+      .
+      .
+   static callSuper() {
+      //자식 Class 에서 부모 Class의 method를 쓰는 동시에 자식 method를 정의.
+      super.callSuper();
+      // 원하는 기능 추가
+      return
+      .
+      .
+      .
+   }
+
+  ```
 
   - super 키워드는 마찬가지로 1개만 사용하여야 하고 this 키워드가 나오기 전에 선언을 해야한다.
 
-  ### # Static Methods
+  ### # Static Methods & Properties
 
-  - 인스턴스화할 필요없이 호출이 가능하며, 클래스의 인스턴스에서는 static method를 사용할 수 없다. 보통 유틸리티 기능을 만들때 사용되느데 caches를 사용하거나 , 고정된 환경(configuration) 을 만든다거나, 매 인스턴스간 복제할 필요 없이 데이터를 다루는데 유용하다.
+  - 인스턴스화할 필요없이 호출이 가능하며, 클래스의 인스턴스에서는 static method를 사용할 수 없다. 보통 유틸리티 기능을 만들때 사용되는데 caches를 사용하거나 , 고정된 환경(configuration) 을 만든다거나, 매 인스턴스간 복제할 필요 없이 데이터를 다루는데 유용하다.
+
+  - 쉽게 항상 새롭게 생성자에서 선언을 하거나, 값 관리를 하지 않고 쓸 수 있는 Data를 다루르때 쓴다고 생각하면 좋다. 클래스 내에서만 사용될 변수 관리.
 
     ```javascript
     class Static {
@@ -120,7 +149,8 @@
 
 ## # Instance Properties
 
-- "Instance Properties : 인스턴스 속성" 은 반드시 클래스 안에서 정이되어야 한다.
+- "Instance Properties : 인스턴스 속성" 은 반드시 클래스 안에서 정의되어야 한다.
+  인스턴스 생성시에 정해질(선언할) param 추가로 정의되어 있다.
 
   ```javascript
   class Class {
@@ -131,4 +161,21 @@
   }
   ```
 
-- Static 속성과 Prototype 속성은 클래스 선언부 바깥쪽 에서 정의되어야 한다.
+## # Species
+
+- Array objects를 상속한 새로운 클래스에서 기존 Array에 있는 (prototype) method를 사용한다면, 결과 부모클래스의 method에 의한 instance로 인식된다.
+
+```javascript
+class MyArray extends Array {
+  // Overwrite species to the parent Array constructor
+  static get [Symbol.species]() {
+    return Array;
+  }
+}
+
+const a = new MyArray(1, 2, 3);
+const mapped = a.map((x) => x * x);
+
+console.log(mapped instanceof MyArray); // false
+console.log(mapped instanceof Array); // true
+```
