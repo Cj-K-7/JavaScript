@@ -39,4 +39,9 @@
 }
 ```
 
-[Install Prompt](https://web.dev/customize-install/) 정책
+## 참고 자료
+
+### [Install Prompt](https://web.dev/customize-install/)
+
+
+## 2. Web App Manifest
