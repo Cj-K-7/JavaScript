@@ -98,7 +98,7 @@ Javascript 객체는 [prototype](https://developer.mozilla.org/en-US/docs/Web/Ja
 
 ---
 
-다음 알고리즘이 가장 기본이되는 garbage collection 알고리즘으로, 객체가 아직 다른 객체를 참조하고 있는지에 따라, 필요여부를 결정하는 문제를 줄여주는 역할을 한다.
+다음 알고리즘이 초기 garbage collection 알고리즘으로, 객체가 아직 다른 객체를 참조하고 있는지에 따라, 필요여부를 결정하는 문제를 줄여주는 역할을 한다.
 
 만약 참조하고 있는 값이 없을 경우, 다른 말로 zero reference 상태가 되면 이 객체는 "garbage" 로 구분된다.
 
@@ -110,34 +110,45 @@ let x = {
     b: 2,
   },
 };
+
+// 2개의 객체가 생성되었으며, 한개는 다른 1개를 참조하며,
+// 다른 하나는 자체적으로 하나의 값을 가지고 있다.
+// 그리고 'x' 변수에 가상으로 할당된 참조 값이 있다.
+// 현재는 명백히 garbage-collect될 값이 없다.
 ```
 
-2개의 객체가 생성되었으며, 한개는 다른 1개를 참조하며, 다른 하나는 자체적으로 하나의 값을 가지고 있다.
-그리고 'x' 변수에 가상으로 할당된 참조 값이 있다.
-현재는 명백히 garbage-collect될 값이 없다.
-
+```javascript
 let y = x;
-// 여기서 y는
+// 여기서 y는 x객체를 참조한다.
+```
 
+```javascript
 x = 1;
-// Now, the object that was originally in 'x' has a unique reference
-// embodied by the 'y' variable.
+// 이제 'x' 변수에 있던 객체는 'y' 변수로 고유한 참조값이 된다.
 
 let z = y.a;
-// Reference to 'a' property of the object.
-// This object now has 2 references: one as a property,
-// the other as the 'z' variable.
-
-y = "mozilla";
-// The object that was originally in 'x' has now zero
-// references to it. It can be garbage-collected.
-// However its 'a' property is still referenced by
-// the 'z' variable, so it cannot be freed.
-
-z = null;
-// The 'a' property of the object originally in x
-// has zero references to it. It can be garbage collected.
-
+// 'z' 는 객체의 'a' 에 대한 속성을 참조한 개체이며, 이제 이 객체는 2개의 참조. 'y'와 'z'가 있다.
 ```
 
+```javascript
+y = "mozilla";
+// 원래의 변수 였던 'x'는 이제 참조하는 대상이 없고 ( y의 값이 사라지면서 zero reference), 이제 garbage collection 의 대상이 된다. 하지만 'z' 변수는 아직 'a'의 값을 가지고 있다.
+
+z = null;
+// 'a' 값이 여기서 gabage collection이 된다.
+```
+
+하지만 이 방식에 한계가 있는, 순환 참조 형식 구조에서, 2개의 객체가 서로를 참조하는 경우, function call 이 이루어지면서
+
+```javascript
+function f() {
+  const x = {};
+  const y = {};
+  x.a = y; // x references y
+  y.a = x; // y references x
+
+  return "azerty";
+}
+
+f();
 ```
