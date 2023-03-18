@@ -138,7 +138,7 @@ z = null;
 // 'a' 값이 여기서 gabage collection이 된다.
 ```
 
-하지만 이 방식에 한계가 있는, 순환 참조 형식 구조에서, 2개의 객체가 서로를 참조하는 경우, function call 이 이루어지면서
+하지만 이 방식에 한계가 있는, 순환 참조 형식 구조에서(아래 예시), 2개의 객체가 서로를 참조하는 경우, function call 완료되면서 메모리 범위를 벗어나게되고, 필요치 않는(unneeded) 것으로 간주되기 시작하고, 할당된 메모리가 회수되어야 한다(garbage collection). 하지만 여기서 reference-counting 알고리즘은 각자를 참조하는 두 객체를 회수 대상으로 삼지 않게되면서 memory leak 이 발생하게 된다. 
 
 ```javascript
 function f() {
@@ -152,3 +152,17 @@ function f() {
 
 f();
 ```
+
+### <span style="color:orange">**Mark-and-sweep algorithm**</span>
+---
+이 알고리즘은 "더 이상 필요하지 않은 객체" 의 정의를 "닿을 수 없는(unreachable) 객체"로 범위를 좁힌다.
+
+ 이 알고리즘은 한 객체 집합의 정보를 *root* 라고 가정한다. Javascipt 에서 이 root는 전역개체고, 주기적으로 garbage colector 가 이 root들로 부터 시작된다.
+
+  root로 부터 참조된 모든 객체를 찾고, 그 객체를 참조된 값까지 모두 찾아낸 후, 찾아낼 수 있는(*reachable*) 객체와 없는 객체를 모으게 된다.
+
+  이 알고리즘은 zero reference 객체에 도달 할 수 없는 상태인 것(*unreachable*)을  더 효과적으로 구분하기 떄문에 때문에 좀 더 개선된 버전이라고 할 수 있다.
+
+  현대의 모든 브라우저 엔진들은 이 mark-and-sweep garbage collector 를 사용한다.
+  
+  이 알고리즘 접근방식의 이점은 순환 참조 상황에 대해서도 garbage collector 가 해당 메모리를 회수할지 판단 할 수 있다는 점이다.
